@@ -18,8 +18,8 @@ app.use(express.json()); // JSON 파싱 미들웨어 등록
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(router);// 라우트합니다.
-const sequelize = new Sequelize('data', 'dbmasteruser', 'jlh003189', {
-    host: 'ls-6acaf0a366118845d345b391bb025de31876dbbf.clm0mwmc8uyi.ap-northeast-2.rds.amazonaws.com',
+const sequelize = new Sequelize('data', '비공개', '비밀번호비공개', {
+    host: '비공개ap-northeast-2.rds.amazonaws.com',
     dialect: 'mysql' // 사용하는 데이터베이스 종류 (MySQL, PostgreSQL, SQLite 등)
 });
 

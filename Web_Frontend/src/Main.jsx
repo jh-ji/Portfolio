@@ -15,12 +15,12 @@ function Main(){
         axios.get('http://3.38.231.37:3002/posts')
         .then(response => {
           initMap();
-          setLocation(response.data.location);
-          setIsOpen(response.data.isOpen);
-          setBrightness(response.data.brightness);
-          setCheckDate(response.data.checkDate);
-          setTemp(response.data.temp);
-          setHumidity(response.data.humidity);
+          setLocation(response.data[0].location);
+          setIsOpen(response.data[0].isOpen);
+          setBrightness(response.data[0].brightness);
+          setCheckDate(response.data[0].checkDate);
+          setTemp(response.data[0].temp);
+          setHumidity(response.data[0].humidity);
           setShow(true);
           
         })
