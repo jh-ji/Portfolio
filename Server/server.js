@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(router);// 라우트합니다.
 const sequelize = new Sequelize('data', '비공개', '비밀번호비공개', {
     host: '비공개ap-northeast-2.rds.amazonaws.com',
-    dialect: 'mysql' // 사용하는 데이터베이스 종류 (MySQL, PostgreSQL, SQLite 등)
+    dialect: 'mysql' 
 });
 
 const PostModel = require('./models/post');

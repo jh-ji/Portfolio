@@ -69,20 +69,19 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint32_t portval;
-char isOpen;
-int count=0;
-int check=0;
 #define TRIG_PIN GPIO_PIN_12
 #define TRIG_PORT GPIOA
 #define ECHO_PIN GPIO_PIN_11
 #define ECHO_PORT GPIOA
-uint32_t pMillis;
+#define DHT11_PIN GPIO_PIN_9
+#define DHT11_PORT GPIOB
+uint32_t portval;
+char isOpen;
+int count=0;
+int check=0;
 uint32_t Value1 = 0;
 uint32_t Value2 = 0;
 float Distance  = 0;  // cm
-#define DHT11_PORT GPIOB
-#define DHT11_PIN GPIO_PIN_9
 uint8_t RHI, RHD, TCI, TCD, SUM;
 uint32_t pMillis, cMillis;
 void microDelay (uint16_t delay)
@@ -184,7 +183,7 @@ void checkDistance(){
 	__HAL_TIM_SET_COUNTER(&htim3, 0);
     while (__HAL_TIM_GET_COUNTER (&htim3) < 10);  // wait for 10 us
     */
-	mircoDelay(10);
+	microDelay(10);
 	HAL_GPIO_WritePin(TRIG_PORT, TRIG_PIN, GPIO_PIN_RESET);  // pull the TRIG pin low
 	//trig핀에 10us동안 high 신호를 줌
 	pMillis = HAL_GetTick(); // used this to avoid infinite while loop  (for timeout)
